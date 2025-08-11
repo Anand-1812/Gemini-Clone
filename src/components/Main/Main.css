@@ -94,6 +94,7 @@
   border-radius: 50px;
   width: 100%;
   max-width: 900px;
+  transition: background-color 0.2s ease;
 }
 
 .search-box img {
@@ -108,6 +109,10 @@
   outline: none;
   padding: 8px;
   font-size: 1.2rem;
+}
+
+.search-box:hover {
+  background-color: #dfe4ea;
 }
 
 .search-box div {
