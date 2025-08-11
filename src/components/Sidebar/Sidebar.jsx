@@ -9,12 +9,12 @@ export const Sidebar = () => {
   return (
     <div className="sidebar">
       <div className='top'>
-        <img onClick={() => setToggleSidebar(prev => !prev)} className='menu' src={assets.menu_icon} ult="" />       
+        <img onClick={() => setToggleSidebar(prev => !prev)} className='menu' src={assets.menu_icon} ult="" />
         <div className="new-chat">
-          <img src={assets.plus_icon}  alt="" />
-          { toggleSidebar ? <p>New Chat</p> : null }
+          <img src={assets.plus_icon} alt="" />
+          {toggleSidebar ? <p>New Chat</p> : null}
         </div>
-        { toggleSidebar ? 
+        {toggleSidebar ?
           <div className="recent">
             <p className='recent-title'>Recent</p>
             <div className="recent-entry">
@@ -28,15 +28,15 @@ export const Sidebar = () => {
       <div className='bottom'>
         <div className="bottom-item recent-entry">
           <img src={assets.question_icon} alt="" />
-          { toggleSidebar ? <p>Help</p> : null }
+          {toggleSidebar ? <p>Help</p> : null}
         </div>
         <div className="bottom-item recent-entry">
           <img src={assets.history_icon} alt="" />
-          { toggleSidebar ?  <p>Activity</p> : null } 
+          {toggleSidebar ? <p>Activity</p> : null}
         </div>
         <div className="bottom-item recent-entry">
           <img src={assets.setting_icon} alt="" />
-          { toggleSidebar ? <p>Settings</p> : null }
+          {toggleSidebar ? <p>Settings</p> : null}
         </div>
       </div>
     </div>
