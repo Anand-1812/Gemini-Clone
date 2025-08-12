@@ -53,7 +53,14 @@ export const Main = () => {
           </>
         ) : (
           <div className='result'>
-            {/* Show result content here */}
+              <div className='result-title'>
+                <img src={assets.user_icon} />
+                <p>{recentprompt}</p>
+              </div>
+              <div className='result-data'>
+                <img src={assets.gemini_icon} />
+                <p dangerouslySetInnerHTML={{__html:resultData}}></p>
+              </div>
           </div>
         )}
       </div>

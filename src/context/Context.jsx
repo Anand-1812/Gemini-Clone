@@ -15,6 +15,7 @@ const ContextProvider = ({ children }) => {
     setResultData("");
     setLoading(true);
     setShowResult(true);
+    setRecentPrompt(input);
     const response = await main(input);
     setResultData(response);
     setLoading(false);

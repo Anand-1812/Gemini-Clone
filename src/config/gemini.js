@@ -21,7 +21,9 @@ async function main(prompt) {
     );
 
     const data = await response.json();
-    console.log(data.candidates?.[0]?.content?.parts?.[0]?.text || "No output");
+    const output = data.candidates?.[0]?.content?.parts?.[0]?.text || "No output";
+    console.log(output);
+    return output;
   } catch (err) {
     console.error("Error calling Gemini API:", err);
   }
