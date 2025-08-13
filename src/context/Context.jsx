@@ -12,7 +12,9 @@ const ContextProvider = ({ children }) => {
   const [resultData, setResultData] = useState("");
 
   const delayPara = (index, nextWord) => {
-    
+    setTimeout(function () {
+      setResultData(prev => prev + nextWord)
+    }, 75*index)
   }
 
   const onSent = async (prompt) => {
@@ -34,8 +36,14 @@ const ContextProvider = ({ children }) => {
       
     // making one line with the single star
     let newResponse2 = newResponse.split("*").join("</br>");
+
+    // typing effect
+    let newResponseArray = newResponse2.split(" ");
+    for (let i = 0;i < newResponseArray.length;i++) {
+      const nextWrod = newResponseArray[i];
+      delayPara(i, nextWrod + " ");
+    }
     
-    setResultData(newResponse2);
     setLoading(false);
     setInput("");
 
