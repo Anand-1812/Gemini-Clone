@@ -53,14 +53,21 @@ export const Main = () => {
           </>
         ) : (
           <div className='result'>
-              <div className='result-title'>
-                <img src={assets.user_icon} />
-                <p>{recentprompt}</p>
-              </div>
-              <div className='result-data'>
-                <img src={assets.gemini_icon} />
-                <p dangerouslySetInnerHTML={{__html:resultData}}></p>
-              </div>
+            <div className='result-title'>
+              <img src={assets.user_icon} />
+              <p>{recentprompt}</p>
+            </div>
+            <div className='result-data'>
+              <img src={assets.gemini_icon} />
+              {loading
+                ? <div className='loader'>
+                  <hr />
+                  <hr />
+                  <hr />
+                </div>
+                : <p dangerouslySetInnerHTML={{ __html: resultData }}></p>
+              }
+            </div>
           </div>
         )}
       </div>
