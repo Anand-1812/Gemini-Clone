@@ -3,9 +3,10 @@ import { assets } from '../../assets/assets';
 import './Main.css';
 import { Context } from '../../context/Context';
 
+
 export const Main = () => {
   const {
-    onSent,
+    sendInput,
     recentprompt,
     showResult,
     loading,
@@ -13,6 +14,12 @@ export const Main = () => {
     setInput,
     input
   } = useContext(Context);
+
+  const handleKeyDown = (e) => {
+    if (e.key == 'Enter') {
+      sendInput();
+    }
+  }
 
   return (
     <div className='main'>
@@ -75,6 +82,7 @@ export const Main = () => {
       <div className='main-bottom'>
         <div className='search-box'>
           <input
+            onKeyDown={handleKeyDown}
             onChange={(e) => setInput(e.target.value)}
             value={input}
             type='text'

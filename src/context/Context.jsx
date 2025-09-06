@@ -22,7 +22,7 @@ const ContextProvider = ({ children }) => {
     setShowResult(false);
   }
 
-  const onSent = async (prompt) => {
+  const sendInput = async (prompt) => {
     setResultData("");
     setLoading(true);
     setShowResult(true);
@@ -66,7 +66,7 @@ const ContextProvider = ({ children }) => {
   const contextValue = {
     prevPrompt,
     setPrevPrompt,
-    onSent,
+    sendInput,
     setRecentPrompt,
     recentPrompt,
     showResult,
